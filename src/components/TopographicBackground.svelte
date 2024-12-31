@@ -18,21 +18,26 @@
   const drawTopography = () => {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 
+    // Precompute constants
+    const scale = 0.005;
+    const threshold = 0.01;
+
     for (let y = 0; y < canvas.height; y++) {
+      const yScaled = (y + offsetY) * scale; // Precompute scaled y-coordinate
+
       for (let x = 0; x < canvas.width; x++) {
-        const noiseValue = simplex(x * 0.005, (y + offsetY) * 0.005, 0);
+        const xScaled = x * scale; // Precompute scaled x-coordinate
+        const noiseValue = simplex(xScaled, yScaled, 0);
 
         // Draw contour lines based on noise thresholds
-        if (Math.abs(noiseValue % contourInterval) < 0.01) {
-          ctx.beginPath();
-          ctx.strokeStyle = `rgba(255, 255, 255, 0.7)`;
-          ctx.lineWidth = 0.5;
-          ctx.moveTo(x, y);
-          ctx.lineTo(x + 1, y + 1); // Tiny line segment for each noise value
-          ctx.stroke();
+        const remainder = Math.abs(noiseValue % contourInterval);
+        if (remainder < threshold) {
+          ctx.fillStyle = `rgba(255, 255, 255, 0.7)`;
+          ctx.fillRect(x, y, 1, 1); // Draw a 1x1 pixel rectangle instead of line segments
         }
       }
     }
+
   };
 
   const animate = () => {

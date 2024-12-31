@@ -28,6 +28,7 @@
     font-size: 1.5rem;
     font-weight: bold;
     padding: 0.5rem 1rem;
+    background: black;
     border: 2px solid white; /* Outline the logo with a white border */
     border-radius: 5px; /* Add slight rounding to the corners */
   }

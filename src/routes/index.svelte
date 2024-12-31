@@ -6,8 +6,8 @@
 
   const navItems = [
     { name: 'Home', href: '/', isActive: true },
-    { name: 'Aegis', href: '/aegis', isActive: false },
-    { name: 'Mission', href: '/mission', isActive: false },
+    //{ name: 'Aegis', href: '/aegis', isActive: false },
+    //{ name: 'Mission', href: '/mission', isActive: false },
   ];
 </script>
 
@@ -17,12 +17,11 @@
 
 <main>
   <section class="hero">
-    <h1>Shielding Families with Tomorrow's Defense</h1>
-    <p>Discover cutting-edge solutions for civilian safety.</p>
-  </section>
+    <h1>Shielding Families Against The Threats of Tomorrow</h1>
+    <p>Cutting-edge solutions for UAV & drone detection.</p>
 
-  <section>
-    <SignupForm />
+    <b>Coming Soon.</b>
+    <!--<SignupForm />-->
   </section>
 </main>
 
@@ -40,7 +39,9 @@
   }
 
   .hero {
-    margin: 2rem 0;
+    margin: 0.5rem 0.25rem;
+    padding: 3vh 10vw; 
+    background: black; /* Transparent background to show the topographic background */
   }
 
   .hero h1 {

@@ -2,8 +2,8 @@
 <footer class="footer">
   <p>&copy; 2024 Banner Systems. All rights reserved.</p>
   <nav>
-    <a href="/terms">Terms of Service</a>
-    <a href="/privacy">Privacy Policy</a>
+    <!--<a href="/terms">Terms of Service</a>
+    <a href="/privacy">Privacy Policy</a>-->
   </nav>
 </footer>
 
